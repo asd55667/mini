@@ -1,0 +1,50 @@
+<!--pages/goods_detail/index.wxml-->
+<!-- <text>pages/goods_detail/index.wxml</text> -->
+
+<view class="goods_detail">
+	<!-- swiper -->
+	<swiper autoplay="{{true}}" circular indicator-dots>
+		<swiper-item wx:for="{{goods_obj.pics}}" wx:key="pics_id" 
+		bindtap="handle_img" data-url="{{item.pics_mid_url}}">
+			<image mode="widthFix" src="{{item.pics_mid_url}}" />
+		</swiper-item>
+	</swiper>
+
+	<view class="goods_price">{{goods_obj.goods_price}}</view>
+
+	<view class="goods_name_row">
+		<view class="goods_name">{{goods_obj.goods_name}}</view>
+		<view class="goods_collect" bindtap="handleCollect">
+			<text class="iconfont {{stared ? 'icon-star' : 'icon-shoucang'}}"></text>
+			<view class="collect_text">Star</view>
+		</view>
+	</view>
+
+	<view class="goods_info">
+		<view class="goods_info_title">Detail</view>
+		<view class="goods_info_content">
+			<rich-text nodes="{{goods_obj.goods_introduce}}"></rich-text>
+		</view>
+	</view>
+
+	<view class="bottom_tool">
+		<view class="tool_item">
+			<view class="iconfont icon-kefu1"></view>
+			<view >Contact</view>
+			<button open-type="contact"></button>
+		</view>
+		<view class="tool_item">
+			<view class="iconfont icon-share"></view>
+			<view >Share</view>
+			<button open-type="share"></button>
+		</view>
+		<navigator open-type="switchTab" url="/pages/cart/index" class="tool_item">
+			<view class="iconfont icon-gouwuche"></view>
+			<view >Cart</view>						
+		</navigator>
+
+		<view class="add_to_cart" bindtap="handle_mycart">Add to Cart</view>
+
+		<view class="buy" bindtap="handle_transaction">Buy Now</view>
+	</view>
+</view>

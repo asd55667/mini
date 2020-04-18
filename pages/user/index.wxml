@@ -1,0 +1,81 @@
+<!--pages/user/index.wxml-->
+<!-- <text>pages/user/index.wxml</text> -->
+
+
+
+
+<view class="user_info_wrap">
+    <view wx:if="{{userinfo.avatarUrl}}" class="user_img_wrap">
+        <image class="user_bg" src="{{userinfo.avatarUrl}}"></image>
+
+        <view class="user_info">
+            <image class="user_icon" src="{{userinfo.avatarUrl}}"></image>
+            <view class="user_name">{{userinfo.nickName}}</view>
+        </view>
+    </view>
+    <navigator wx:else class="login_btn" url="/pages/login/index">Login</navigator>
+</view>
+
+<view class="user_content">
+    <view class="user_main">
+        <view class="history_wrap">
+            <navigator >
+                <view class="history_num">0</view>
+                <view class="history_cat">Shop</view>
+            </navigator>
+            <navigator url="/pages/collect/index">
+                <view class="history_num">{{collectNums}}</view>
+                <view class="history_cat">Product</view>
+            </navigator>
+            <navigator >
+                <view class="history_num">0</view>
+                <view class="history_cat">Concerned</view>
+            </navigator>
+            <navigator >
+                <view class="history_num">0</view>
+                <view class="history_cat">History</view>
+            </navigator>
+        </view>
+        
+        <view class="orders_wrap">
+            <view class="orders_title">My Orders</view>
+            <view class="orders_content">
+                <navigator url="/pages/order/index?type=1">
+                    <view class="iconfont icon-dingdan"></view>
+                    <view class="order_name">All Orders</view>
+                </navigator>
+                <navigator url="/pages/order/index?type=2">
+                    <view class="iconfont icon-paygot"></view>
+                    <view class="order_name">Unpaid</view>
+                </navigator>
+                <navigator url="/pages/order/index?type=3">
+                    <view class="iconfont icon-shouhuodizhi"></view>
+                    <view class="order_name">Destination</view>
+                </navigator>
+                <navigator >
+                    <view class="iconfont icon-tuihuotuikuan-"></view>
+                    <view class="order_name">Refund</view>
+                </navigator>
+            </view>
+        </view>
+
+        <view class="addr_wrap">
+            Management of Destination
+        </view>
+
+        <view class="app_info_wrap">
+            <view class="app_info_item app_info_contact">
+                <text >Contact</text>
+                <text >400-820-8820</text>
+            </view>
+
+            <navigator url="/pages/feedback/index" class="app_info_item">Feedback</navigator>
+            <view class="app_info_item">About us</view>
+        </view>
+
+        <view class="share_wrap">Share with Others</view>
+
+
+    </view>
+
+</view>

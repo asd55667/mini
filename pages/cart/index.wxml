@@ -1,0 +1,77 @@
+<!--pages/cart/index.wxml-->
+<!-- <text>pages/cart/index.wxml</text> -->
+
+<view class="destination">
+    <view class="addr_button" wx:if="{{!address.userName}}">
+        <button type="primary" plain bindtap="choose_addr">Destination</button>
+    </view>
+    <view class="user_info_wrap" wx:else>
+        <view class="user_info">
+            <view>{{address.userName}}</view>
+            <view>{{address.provinceName + address.cityName + address.countyName + address.detailInfo}}</view>
+        </view>
+        <view class="user_phone_no">{{address.telNumber}}</view>
+    </view>
+</view>
+
+
+<view class="cart_content">
+    <view class="cart_title">Cart</view>
+    <view class="cart_main">
+        <block wx:if="{{cart.length !== 0}}">
+            <view class="cart_item" wx:for="{{cart}}" wx:key="goods_id">
+                <!-- checkbox  -->
+                <view class="cart_check_wrap">
+                    <checkbox-group bindchange="checkbox_change" data-id="{{item.goods_id}}">
+                        <checkbox checked="{{item.checked}}" />                    
+                    </checkbox-group>
+                </view>
+
+                <!-- img -->
+                <navigator class="cart_img_wrap">
+                    <image mode='widthFix' src="{{item.goods_small_logo}}" />
+                </navigator>
+
+                <!-- info -->
+                <view class="cart_info_wrap">
+                    <view class="goods_name">{{item.goods_name}}</view>
+                    <view class="godds_price_wrap">
+
+                        <view class="goods_price">{{item.goods_price}}</view>
+                        <view class="cart_num_tool">
+                            <view class="num_edit" bindtap="num_change" data-id="{{item.goods_id}}" data-operation="{{-1}}">-</view>
+                            <view class="goods_num">{{item.num}}</view>
+                            <view class="num_edit" bindtap="num_change" data-id="{{item.goods_id}}" data-operation="{{1}}">+</view>
+                        </view>
+                    </view>
+                </view>
+            </view>            
+        </block>
+    <!-- no content in cart -->
+        <block wx:else>
+            <image mode="widthFix" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587020076426&di=f9eb176b1b0a1effcb1f844172f74526&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2Fe1b1467beea0a9c7d6a56b32bac6d7e5dcd914f7c3e6-YTwUd6_fw658" />
+        </block>
+    </view>
+
+</view>
+
+
+
+<!-- foot tool -->
+<view class="foot_tool">
+<!-- checkbok -->
+    <view class="all_check_wrap">   
+        <checkbox-group bindchange="checkboxs_change">
+            <checkbox  checked="{{all_checked}}">All</checkbox>
+        </checkbox-group>
+    </view>
+<!-- price -->
+    <view class="total_price_wrap">
+        <view class="total_price">
+            All: <text class="total_price_text">¥{{total_price}}</text>
+        </view>
+        <view >Logistics included</view>
+    </view>
+<!-- pay button -->
+    <view class="pay_wrap" bindtap="handle_pay">Pay({{nums}})</view>
+</view>

@@ -1,0 +1,57 @@
+page {
+  background-color: #eeeeee;
+}
+.feed_back {
+  padding: 20rpx;
+  color: #666;
+}
+.feed_back .tips {
+  display: flex;
+  flex-wrap: wrap;
+}
+.feed_back .tips text {
+  width: 30%;
+  padding-left: 10rpx;
+  text-align: center;
+  background-color: #fff;
+  margin: 20rpx 10rpx;
+}
+.feed_back .content {
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+.feed_back .content textarea {
+  padding: 10rpx;
+}
+.feed_back .content .tool {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 30rpx;
+}
+.feed_back .content .tool button {
+  width: 90rpx;
+  height: 90rpx;
+  font-size: 60rpx;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ccc;
+  margin: 0;
+  margin-left: 20rpx;
+}
+.feed_back .content .tool .up_img_items {
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+}
+.feed_back .form_btn_wrap {
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: flex-end;
+}
+.feed_back .form_btn_wrap button {
+  background-color: var(--themeColor);
+  width: 50%;
+  margin: 0;
+  color: #fff;
+}

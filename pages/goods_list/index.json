@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "search_input": "../../components/search_input/search_input",
+    "Tabs": "../../components/tabs/tabs"
+  },
+  "navigationBarTitleText": "Goods List",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

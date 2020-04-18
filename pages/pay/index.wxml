@@ -1,0 +1,57 @@
+<!--pages/cart/index.wxml-->
+<!-- <text>pages/pay/index.wxml</text> -->
+
+<view class="destination">
+    <view class="user_info_wrap">
+        <view class="user_info">
+            <view>{{address.userName}}</view>
+            <view>{{address.provinceName + address.cityName + address.countyName + address.detailInfo}}</view>
+        </view>
+        <view class="user_phone_no">{{address.telNumber}}</view>
+    </view>
+</view>
+
+
+<view class="cart_content">
+    <view class="cart_title">Cart</view>
+    <view class="cart_main">
+
+        <view class="cart_item" wx:for="{{cart}}" wx:key="goods_id">
+
+            <!-- img -->
+            <navigator class="cart_img_wrap">
+                <image mode='widthFix' src="{{item.goods_small_logo}}" />
+            </navigator>
+
+            <!-- info -->
+            <view class="cart_info_wrap">
+                <view class="goods_name">{{item.goods_name}}</view>
+                <view class="godds_price_wrap">
+
+                    <view class="goods_price">{{item.goods_price}}</view>
+                    <view class="cart_num_tool">
+                        <view class="goods_num">X{{item.num}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>            
+
+    </view>
+
+</view>
+
+
+
+<!-- foot tool -->
+<view class="foot_tool">
+
+<!-- price -->
+    <view class="total_price_wrap">
+        <view class="total_price">
+            All: <text class="total_price_text">¥{{total_price}}</text>
+        </view>
+        <view >Logistics included</view>
+    </view>
+<!-- pay button -->
+    <view class="pay_wrap" bindtap="handle_payment" >Payment({{nums}})</view>
+</view>
