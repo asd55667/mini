@@ -8,23 +8,31 @@
 		"es6": true,
 		"enhance": true,
 		"postcss": true,
+		"preloadBackgroundData": false,
 		"minified": true,
 		"newFeature": true,
-		"cover": true,
+		"coverView": true,
+		"nodeModules": false,
 		"autoAudits": false,
 		"showShadowRootInWxmlPanel": true,
 		"scopeDataCheck": false,
+		"uglifyFileName": false,
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
 		"uploadWithSourceMap": true,
+		"compileHotReLoad": false,
 		"babelSetting": {
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
-		}
+		},
+		"useIsolateContext": true,
+		"useCompilerModule": false,
+		"userConfirmedUseCompilerModuleSwitch": false,
+		"cover": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.10.4",
+	"libVersion": "2.11.2",
 	"appid": "wxa32c3cbdd6ad143d",
 	"projectname": "online_retailers",
 	"debugOptions": {
@@ -68,7 +76,7 @@
 					"id": 1,
 					"name": "goods_list",
 					"pathName": "pages/goods_list/index",
-					"query": "cid=5",
+					"query": "cid=4",
 					"scene": null
 				},
 				{
@@ -108,21 +116,14 @@
 				},
 				{
 					"id": -1,
-					"name": "login",
-					"pathName": "pages/login/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
 					"name": "order",
 					"pathName": "pages/order/index",
 					"query": "type=1",
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "star",
+					"id": 9,
+					"name": "collect",
 					"pathName": "pages/collect/index",
 					"query": "",
 					"scene": null

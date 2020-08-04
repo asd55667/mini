@@ -128,7 +128,7 @@ Page({
       //     }
       //   }
       // });
-      const res = await show_model({content: "Delete this product"})
+      const res = await show_model({content: "删除该商品"})
       if(res.confirm){
         cart.splice(index, 1);
         this.reset_cart(cart);
@@ -168,11 +168,11 @@ Page({
   async handle_pay(){
     const {address, nums} = this.data;
     if(!address.userName){
-      await show_toast({title: "You haven't choose any destination"});
+      await show_toast({title: "你还未选择收货地址"});
       return ;
     }
     if(nums === 0){
-      await show_toast({title: "You haven't choose any product"})
+      await show_toast({title: "你还未选购任何商品"})
     }
 
     wx.navigateTo({

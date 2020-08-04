@@ -2,5 +2,5 @@
 <!-- <text>pages/auth/index.wxml</text> -->
 
 <button type="primary" plain open-type="getUserInfo" bindgetuserinfo="handleUserInfo">
-Got Authentication
+授权
 </button>

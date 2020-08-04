@@ -1,6 +1,5 @@
 let ajax_time = 0;
 export const request=(params)=>{
-
   let header = {...params.header};
   if(params.url.includes("my/")){
     header['Authorization'] = wx.getStorageSync('token');
@@ -11,15 +10,52 @@ export const request=(params)=>{
   wx.showLoading({
     title: "Loading",
     mask: true,
-    success: (result)=>{
-      
-    },
+    success: (result)=>{},
     fail: ()=>{},
     complete: ()=>{}
   });
-
   const baseUrl = "https://api-hmugo-web.itheima.net/api/public/v1/";
 
+  return new Promise((resolve, reject)=>{
+  wx.request({
+    ...params,
+    header: header,
+    url: baseUrl + params.url,
+    success:(result)=>{
+      resolve(result);
+    },
+    fail:(err)=>{
+      reject(err);            
+    },
+    complete: ()=>{
+      ajax_time--;
+      if(ajax_time === 0){
+        wx.hideLoading();
+      }
+    }
+
+  });
+})
+}
+
+
+export const request2=(params)=>{
+  let header = {...params.header};
+  if(params.url.includes("my/")){
+    header['Authorization'] = wx.getStorageSync('token');
+  }
+
+  ajax_time++;
+
+  wx.showLoading({
+    title: "Loading",
+    mask: true,
+    success: (result)=>{},
+    fail: ()=>{},
+    complete: ()=>{}
+  });
+  const baseUrl = "47.102.109.49:8000";
+// const baseUrl = "mini.wuchengwei.icu";
   return new Promise((resolve, reject)=>{
   wx.request({
     ...params,

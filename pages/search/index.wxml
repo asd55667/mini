@@ -2,8 +2,8 @@
 <!-- <text>pages/search/index.wxml</text> -->
 
 <view class="search_row">
-    <input value="{{inp}}" placeholder="Product Name" bindinput="handleInput"/>
-    <button bindtap="handleCancel" hidden="{{!is_focus}}" >Cancel</button>
+    <input value="{{inp}}" placeholder="请输入想要搜索商品名" bindinput="handleInput"/>
+    <button bindtap="handleCancel" hidden="{{!is_focus}}" >取消</button>
 </view>
 
 <view class="search_content">

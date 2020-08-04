@@ -1,120 +1,130 @@
-page{
-    background-color: #edece8;
+page {
+  background-color: #edece8;
 }
-.user_info_wrap{
-    height: 45vh;
-    background-color: var(--themeColor);
-    overflow: hidden;
+.user_info_wrap {
+  height: 45vh;
+  background-color: var(--themeColor);
+  overflow: hidden;
+  position: relative;
+  .user_img_wrap {
     position: relative;
-    .user_img_wrap{
-        position: relative;
-        .user_bg{
-            height: 50vh;
-            filter: blur(10rpx);
-        }
-        .user_info{
-            position: absolute;
-            left: 50%;
-            top: 30%;
-            transform: translateX(-50%);
-            text-align: center;
-            .user_icon{
-                width: 150rpx;
-                height: 150rpx;
-                border-radius: 50%;
-            }
-            .user_name{
-                margin-top: 40rpx;
-                // font-size: 40rpx;
-                color: #fff;
-                
-            }
-        }
+    .user_bg {
+      height: 50vh;
+      filter: blur(10rpx);
     }
-    .login_btn{
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);    
-        top: 40%;
-        color: greenyellow;
-        border: 1rpx solid greenyellow;
-        font-size: 38rpx;
-        padding: 30rpx;  
-        border-radius: 10rpx;
+    .user_info {
+      position: absolute;
+      left: 50%;
+      top: 30%;
+      transform: translateX(-50%);
+      text-align: center;
+      .user_icon {
+        width: 150rpx;
+        height: 150rpx;
+        border-radius: 50%;
+      }
+      .user_name {
+        margin-top: 40rpx;
+        // font-size: 40rpx;
+        color: #fff;
+      }
     }
+  }
+  .login_btn {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 40%;
+    color: greenyellow;
+    border: 1rpx solid greenyellow;
+    font-size: 38rpx;
+    padding: 30rpx;
+    border-radius: 10rpx;
+  }
 }
 
-.user_content{
+.user_content {
+  position: relative;
+  .user_main {
+    color: #666;
+    padding-bottom: 100rpx;
+    position: absolute;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -40rpx;
+  }
+
+  .history_wrap {
+    background-color: #fff;
+    display: flex;
+    navigator {
+      padding: 10rpx;
+      flex: 1;
+      text-align: center;
+      .history_num {
+        color: var(--themeColor);
+      }
+      .history_cat {
+      }
+    }
+  }
+
+  .orders_wrap {
+    background-color: #fff;
+    margin-top: 30rpx;
+    .orders-title-wrap {
+      padding: 20rpx;
+      border-bottom: 1rpx solid #ccc;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .orders_content {
+      display: flex;
+      navigator {
+        padding: 15rpx;
+        flex: 1;
+        text-align: center;
+        .iconfont {
+          font-size: 40rpx;
+          color: var(--themeColor);
+        }
+        .orders_name {
+        }
+      }
+    }
+  }
+
+  .addr_wrap {
+    margin-top: 30rpx;
+    background-color: #fff;
+    padding: 20rpx;
+  }
+  .app_info_wrap {
+    margin-top: 30rpx;
+    background-color: #fff;
+    .app_info_item {
+      padding: 20rpx;
+      border-bottom: 1px solid #ccc;
+    }
+    .app_info_contact {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .share_wrap {
+    margin-top: 30rpx;
+    background-color: #fff;
+    padding: 20rpx;
+  }
+}
+
+.hover-box{
     position: relative;
-    .user_main{
-        color: #666;
-        padding-bottom: 100rpx;
-        position: absolute;
-        width: 90%;
-        left: 50%;
-        transform: translateX(-50%);
-        top: -40rpx;
-    }
-
-    .history_wrap{
-        background-color: #fff;
-        display: flex;
-        navigator{
-            padding: 10rpx;
-            flex: 1;
-            text-align: center;
-            .history_num{
-                color: var(--themeColor);
-            }
-            .history_cat{}
-        }
-    }
-
-    .orders_wrap{
-        background-color: #fff;
-        margin-top: 30rpx;
-        .orders_title{
-            padding: 20rpx;
-            border-bottom: 1rpx solid #ccc;
-        }
-        .orders_content{
-            display: flex;
-            navigator{ 
-                padding: 15rpx;
-                flex: 1;
-                text-align: center;
-                .iconfont{
-                    font-size: 40rpx;
-                    color: var(--themeColor);
-                }
-                .orders_name{}
-
-            }
-        }
-    }
-
-    .addr_wrap{
-        margin-top: 30rpx;
-        background-color: #fff;
-        padding: 20rpx;
-
-    }
-    .app_info_wrap{
-        margin-top: 30rpx;
-        background-color: #fff;
-        .app_info_item{
-            padding: 20rpx;
-            border-bottom: 1px solid #ccc;
-        }
-        .app_info_contact{
-            display: flex;
-            justify-content: space-between;
-        }
-    }
-
-    .share_wrap{
-        margin-top: 30rpx;
-        background-color: #fff;
-        padding: 20rpx;
-    }
+    top: 3rpx;
+    left: 3rpx;
+    box-shadow: 0 0 8px rgba(175, 175, 175, .2);
+    
 }

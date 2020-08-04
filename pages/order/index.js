@@ -12,22 +12,27 @@ Page({
     tab_data:[
       {
         id: 0,
-        value: "All",
+        value: "全部",
         isActive: true
       },
       {
         id: 1,
-        value: "Unpaied",
+        value: "待付款",
         isActive:false
       },
       {
         id:2,
-        value: "Onroad",
+        value: "待发货",
         isActive:false
       },
       {
         id:3,
-        value: "Return/Refund",
+        value: "待收货",
+        isActive:false
+      },
+      {
+        id:4,
+        value: "退款／退货",
         isActive:false
       }
     ],
@@ -38,22 +43,22 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    const token = wx.getStorageSync('token');
-    if(!token){
-      wx.navigateTo({
-        url: '/pages/auth/index'
-      });
-      return;
-    }
+    // const token = wx.getStorageSync('token');
+    // if(!token){
+    //   wx.navigateTo({
+    //     url: '/pages/auth/index'
+    //   });
+    //   return;
+    // }
 
 
-    let curPages =  getCurrentPages();
-    let cur_page = curPages[curPages.length - 1];
-    // console.log(cur_page.options);
+    // let curPages =  getCurrentPages();
+    // let cur_page = curPages[curPages.length - 1];
+    // // console.log(cur_page.options);
 
-    const {type} = cur_page.options;
-    this.changeTitleByIndex(type-1);
-    this.getOrders(type);
+    // const {type} = cur_page.options;
+    // this.changeTitleByIndex(type-1);
+    // this.getOrders(type);
   },
 
   async getOrders(type){
@@ -77,6 +82,6 @@ Page({
     const {index} = e.detail;
     this.changeTitleByIndex(index);
 
-    this.getOrders(index+1);
+    // this.getOrders(index+1);
   }
 })

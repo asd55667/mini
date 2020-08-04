@@ -8,22 +8,12 @@ Page({
     tab_data:[
       {
         id: 0,
-        value: "Shop",
+        value: "收藏",
         isActive: true
       },
       {
-        id: 1,
-        value: "Product",
-        isActive:false
-      },
-      {
         id:2,
-        value: "Concerned",
-        isActive:false
-      },
-      {
-        id:3,
-        value: "History",
+        value: "历史记录",
         isActive:false
       }
     ],

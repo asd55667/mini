@@ -1,5 +1,3 @@
-
-
 export const get_setting=()=>{
     return new Promise((resolve,reject)=>{
         wx.getSetting({
@@ -43,12 +41,12 @@ export const open_setting=()=>{
 export const show_model=(content)=>{
     return new Promise((resolve,reject)=>{
         wx.showModal({
-            title: 'Warning',
-            content: 'Delete this product',
+            title: '警告',
+            content: content.content,
             showCancel: true,
-            cancelText: 'Cancle',
+            cancelText: '取消',
             cancelColor: '#000000',
-            confirmText: 'Confirm',
+            confirmText: '确认',
             confirmColor: '#3CC51F',
             success: (result) => {
                 resolve(result);

@@ -1,7 +1,6 @@
 // pages/auth/index.js
 
-
-import {request} from "../../request/index.js"
+import {request, request2} from "../../request/index.js"
 import {login} from '../../utils/asyn_wx.js'
 
 
@@ -15,15 +14,16 @@ Page({
   },
 
   async handleUserInfo(e){
-    // console.log(e)
     try{
       // console.log(e);
       const {encryptedData, rawData, iv, signature} = e.detail;
+      // console.log(encryptedData); 
       const {code} = await login();
-      // console.log(code); 
+      // x.log(code); 
       const loginParams = {encryptedData, rawData, iv, signature, code};
-      // console.log(loginParams);
-      const token = await request({url: "users/wxlogin",data:loginParams, method:"POST"});
+      console.log(loginParams);
+      const token = await request2({url: "/wxlogin",data:loginParams, method:"POST"});
+      
       //TODO:
       console.log(token);
       wx.setStorageSync("token", token);

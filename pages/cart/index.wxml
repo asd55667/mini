@@ -3,7 +3,7 @@
 
 <view class="destination">
     <view class="addr_button" wx:if="{{!address.userName}}">
-        <button type="primary" plain bindtap="choose_addr">Destination</button>
+        <button type="primary" plain bindtap="choose_addr">收货地址</button>
     </view>
     <view class="user_info_wrap" wx:else>
         <view class="user_info">
@@ -16,7 +16,7 @@
 
 
 <view class="cart_content">
-    <view class="cart_title">Cart</view>
+    <view class="cart_title">购物车</view>
     <view class="cart_main">
         <block wx:if="{{cart.length !== 0}}">
             <view class="cart_item" wx:for="{{cart}}" wx:key="goods_id">
@@ -28,13 +28,15 @@
                 </view>
 
                 <!-- img -->
-                <navigator class="cart_img_wrap">
+                <navigator class="cart_img_wrap" url="/pages/goods_detail/index?goods_id={{item.goods_id}}" >
                     <image mode='widthFix' src="{{item.goods_small_logo}}" />
                 </navigator>
 
                 <!-- info -->
                 <view class="cart_info_wrap">
-                    <view class="goods_name">{{item.goods_name}}</view>
+                    <navigator class="goods_name" url="/pages/goods_detail/index?goods_id={{item.goods_id}}">
+                        {{item.goods_name}}
+                    </navigator>
                     <view class="godds_price_wrap">
 
                         <view class="goods_price">{{item.goods_price}}</view>
@@ -62,16 +64,16 @@
 <!-- checkbok -->
     <view class="all_check_wrap">   
         <checkbox-group bindchange="checkboxs_change">
-            <checkbox  checked="{{all_checked}}">All</checkbox>
+            <checkbox  checked="{{all_checked}}">全部</checkbox>
         </checkbox-group>
     </view>
 <!-- price -->
     <view class="total_price_wrap">
         <view class="total_price">
-            All: <text class="total_price_text">¥{{total_price}}</text>
+            总额: <text class="total_price_text">¥{{total_price}}</text>
         </view>
-        <view >Logistics included</view>
+        <view >含运费</view>
     </view>
 <!-- pay button -->
-    <view class="pay_wrap" bindtap="handle_pay">Pay({{nums}})</view>
+    <view class="pay_wrap" bindtap="handle_pay">付款({{nums}})</view>
 </view>

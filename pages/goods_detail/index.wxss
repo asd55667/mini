@@ -1,26 +1,26 @@
 page {
   padding-bottom: 90rpx;
 }
-.goods_detail swiper {
+swiper {
   height: 65vw;
   text-align: center;
 }
-.goods_detail swiper image {
+swiper image {
   width: 70%;
 }
-.goods_detail .goods_price {
+.goods_price {
   padding: 15rpx;
+  color: var(--themeColor);
   font-size: 32rpx;
   font-weight: 600;
-  color: var(--themeColor);
 }
-.goods_detail .goods_name_row {
+.goods_name_row {
   border-top: 5rpx solid #dedede;
   border-bottom: 5rpx solid #dedede;
   padding: 10rpx 0;
   display: flex;
 }
-.goods_detail .goods_name_row .goods_name {
+.goods_name_row .goods_name {
   flex: 5;
   color: #000;
   font-size: 30rpx;
@@ -30,34 +30,33 @@ page {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }
-.goods_detail .goods_name_row .goods_collect {
+.goods_name_row .goods_collect {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-self: center;
+  justify-content: center;
   align-items: center;
   border-left: 1rpx solid #000;
 }
-.goods_detail .goods_name_row .goods_collect .icon-star {
+.goods_name_row .goods_collect .icon-star {
   color: orangered;
 }
-.goods_detail .goods_info .goods_info_title {
-  font-size: 32rpx;
+.goods_info .goods_info_title {
   color: var(--themeColor);
+  font-size: 32rpx;
   font-weight: 600;
   padding: 20rpx;
 }
-.goods_detail .bottom_tool {
-  border-top: 1rpx solid #ccc;
+.bottom_tool {
   position: fixed;
-  left: 0;
+  height: 90rpx;
   bottom: 0;
   width: 100%;
-  height: 90rpx;
-  background-color: #fff;
+  border-top: 1rpx solid #ccc;
   display: flex;
+  background-color: #fff;
 }
-.goods_detail .bottom_tool .tool_item {
+.bottom_tool .tool_item {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -66,33 +65,32 @@ page {
   font-size: 24rpx;
   position: relative;
 }
-.goods_detail .bottom_tool .tool_item button {
+.bottom_tool .tool_item button {
   position: absolute;
   top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   opacity: 0;
 }
-.goods_detail .bottom_tool .add_to_cart {
+.bottom_tool .add_to_cart {
   flex: 2;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: 600;
   background-color: #ffa500;
-  color: #fff;
-  font-size: 30rpx;
-  font-weight: 600;
 }
-.goods_detail .bottom_tool .buy {
+.bottom_tool .buy {
   flex: 2;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #eb4450;
   color: #fff;
   font-size: 30rpx;
   font-weight: 600;
+  background-color: #eb4450;
 }

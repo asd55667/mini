@@ -53,11 +53,11 @@ Page({
       });
       return;
     }
-    // console.log('a');
-
-    const order_price = this.total_price;
-    const consignee_addr = this.address.all;
-    const cart = this.cart;
+    
+    // console.log(this.data);
+    const order_price = this.data.total_price;
+    const consignee_addr = this.data.address;
+    const cart = this.data.cart;
     let goods = [];
     cart.forEach(v=>goods.push({
       goods_id: v.goods_id,
@@ -66,10 +66,11 @@ Page({
     }))
 
     const orderParams = {order_price, consignee_addr, goods}
+    // console.log(order_price);
 
     const {orderNumber} = await request({url: "my/orders/create", method:"POST", 
                           data: orderParams})
-    console.log(orderNumber);
+    console.log(orderNumber); ``
 
 // pre pay
     const pay = await request({url: "my/orders/req_unifiedorder", method:"POST", 
@@ -81,7 +82,7 @@ Page({
     const res = await request({url: "my/orders/chkOrder", method:"POST",
               data:{orderNumber} })
     // console.log(res);
-    await show_toast({title: "Payment Successful"});
+    await show_toast({title: "支付成功"});
 
     let newCart = wx.getStorageSync('cart');
     newCart = newCart.filter(v=>!v.checked);
@@ -94,7 +95,7 @@ Page({
 
     }
     catch(err){
-      await show_toast({title: "Payment Failed"});
+      await show_toast({title: "支付失败"});
       console.log(err);
     }
 

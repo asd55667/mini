@@ -69,9 +69,12 @@ page {
   background-color: #fff;
   margin-top: 30rpx;
 }
-.user_content .orders_wrap .orders_title {
+.user_content .orders_wrap .orders-title-wrap {
   padding: 20rpx;
   border-bottom: 1rpx solid #ccc;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .user_content .orders_wrap .orders_content {
   display: flex;
@@ -106,4 +109,10 @@ page {
   margin-top: 30rpx;
   background-color: #fff;
   padding: 20rpx;
+}
+.hover-box {
+  position: relative;
+  top: 3rpx;
+  left: 3rpx;
+  box-shadow: 0 0 8px rgba(175, 175, 175, 0.2);
 }

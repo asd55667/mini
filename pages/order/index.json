@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "Tabs": "../../components/tabs/tabs"
+    "Tabs": "/components/tabs/tabs"
   },
-  "navigationBarTitleText": "Orders Detail"
+  "navigationBarTitleText": "订单详情"
 }

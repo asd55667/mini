@@ -3,7 +3,6 @@ import {request} from "../../request/index.js"
 import {show_toast} from '../../utils/asyn_wx.js'
 
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -24,9 +23,7 @@ Page({
     
     const {goods_id} = options;
     // console.log(goods_id);
-
     this.getGoodsDetail(goods_id); 
-
   },
 
   async getGoodsDetail(goods_id){
@@ -36,9 +33,9 @@ Page({
     this.goods_info = tmp;
 
     let collect = wx.getStorageSync('collect') || [];
+
     let stared = collect.some(v => v.goods_id === this.goods_info.goods_id);
     
-
     this.setData({
       goods_obj: {
         goods_name: tmp.goods_name,
@@ -51,8 +48,8 @@ Page({
   },
 
   handle_img(e){
-    console.log(this.goods_info);
-    console.log(this.goods_obj);
+    // console.log(this.goods_info);
+    // console.log(this.goods_obj);
     const urls =  this.goods_info.pics.map(v=>v.pics_mid);
     const  cur = e.currentTarget.dataset.url;
     wx.previewImage({
@@ -74,7 +71,7 @@ Page({
     }
     wx.setStorageSync("cart", cart);
     wx.showToast({
-      title: 'Add Successful',
+      title: '添加成功',
       icon: 'success',
       image: '',
       duration: 1500,
@@ -84,36 +81,31 @@ Page({
       fail: ()=>{},
       complete: ()=>{}
     });
-
-
-
   },
 
   handle_tansaction(){
-
   },
 
-  handleCollect(){
+  handleCollect(){    
     let stared = false;
-    let collect = wx.getStorageInfoSync("collect");
-    console.log(collect);
-    let index = collect.findIndex(v=> v.goods_id === this.goods_info.goods_id);
+    let collect = wx.getStorageSync("collect") || [];
+    // console.log(collect);
+
+    let index = collect.findIndex(v => v.goods_id === this.goods_info.goods_id);
     if(index !== -1){
       collect.splice(index, 1);
       stared = false;
-      show_toast({title: "Unstared"});
+      show_toast({title: "取消成功"});
     }
     else{
       collect.push(this.goods_info);
       stared = true;
-      show_toast({title: "Stared"});
+      show_toast({title: "收藏成功"});
     }
     wx.setStorageSync('collect', collect)
 
     this.setData({
       stared
     })
-
   }
-
 })

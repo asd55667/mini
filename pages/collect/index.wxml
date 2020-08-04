@@ -3,11 +3,11 @@
 
 <Tabs tab_data="{{tab_data}}" bindtabs_change="handleTabsItemChange">
     <view class="collect_main">
-        <view class="collect_title">
-            <text class="collect_tips" active>All</text>
-            <text class="collect_tips">Hot</text>
-            <text class="collect_tips">Will be Sold</text>
-        </view>
+        <!-- <view class="collect_title">
+            <text class="collect_tips" active>所有</text>
+            <text class="collect_tips">最热</text>
+            <text class="collect_tips">即将上架</text>
+        </view> -->
         <view class="collect_content">
 
             <navigator class="goods_item" wx:for="{{collect}}" wx:key="goods_id" url="/pages/goods_detail/index?goods_id={{item.goods_id}}">

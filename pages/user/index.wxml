@@ -1,9 +1,6 @@
 <!--pages/user/index.wxml-->
 <!-- <text>pages/user/index.wxml</text> -->
 
-
-
-
 <view class="user_info_wrap">
     <view wx:if="{{userinfo.avatarUrl}}" class="user_img_wrap">
         <image class="user_bg" src="{{userinfo.avatarUrl}}"></image>
@@ -13,67 +10,63 @@
             <view class="user_name">{{userinfo.nickName}}</view>
         </view>
     </view>
-    <navigator wx:else class="login_btn" url="/pages/login/index">Login</navigator>
+    <button wx:else class="login_btn" open-type="getUserInfo">登陆</button>
 </view>
 
 <view class="user_content">
     <view class="user_main">
         <view class="history_wrap">
-            <navigator >
-                <view class="history_num">0</view>
-                <view class="history_cat">Shop</view>
-            </navigator>
             <navigator url="/pages/collect/index">
+            <!-- <navigator> -->
                 <view class="history_num">{{collectNums}}</view>
-                <view class="history_cat">Product</view>
+                <view class="history_cat">收藏夹</view>
             </navigator>
-            <navigator >
+            <navigator>
                 <view class="history_num">0</view>
-                <view class="history_cat">Concerned</view>
-            </navigator>
-            <navigator >
-                <view class="history_num">0</view>
-                <view class="history_cat">History</view>
+                <view class="history_cat">历史记录</view>
             </navigator>
         </view>
         
         <view class="orders_wrap">
-            <view class="orders_title">My Orders</view>
+            <view class="orders-title-wrap">
+                <view class="orders_title">我的订单</view>
+                <navigator class="total" url="/pages/order/index?type=1" hover-class="hover-box">全部订单></navigator>
+            </view>
             <view class="orders_content">
-                <navigator url="/pages/order/index?type=1">
-                    <view class="iconfont icon-dingdan"></view>
-                    <view class="order_name">All Orders</view>
-                </navigator>
                 <navigator url="/pages/order/index?type=2">
-                    <view class="iconfont icon-paygot"></view>
-                    <view class="order_name">Unpaid</view>
+                    <view class="iconfont icon-dingdan"></view>
+                    <view class="order_name">待付款</view>
                 </navigator>
                 <navigator url="/pages/order/index?type=3">
-                    <view class="iconfont icon-shouhuodizhi"></view>
-                    <view class="order_name">Destination</view>
+                    <view class="iconfont icon-paygot"></view>
+                    <view class="order_name">待发货</view>
                 </navigator>
-                <navigator >
-                    <view class="iconfont icon-tuihuotuikuan-"></view>
-                    <view class="order_name">Refund</view>
+                <navigator url="/pages/order/index?type=4">
+                    <view class="iconfont icon-shouhuodizhi"></view>
+                    <view class="order_name">待收货</view>
+                </navigator>
+                <navigator url="/pages/order/index?type=5">
+                    <view class="iconfont icon-shouhuodizhi"></view>
+                    <view class="order_name">退货／售后</view>
                 </navigator>
             </view>
         </view>
 
-        <view class="addr_wrap">
-            Management of Destination
+        <view class="addr_wrap" hover-class="hover-box" bindtap="handleAddr">
+            收货地址管理
         </view>
 
-        <view class="app_info_wrap">
-            <view class="app_info_item app_info_contact">
-                <text >Contact</text>
+        <view class="app_info_wrap" >
+            <view class="app_info_item app_info_contact" hover-class="hover-box">
+                <text >联系我们</text>
                 <text >400-820-8820</text>
             </view>
 
-            <navigator url="/pages/feedback/index" class="app_info_item">Feedback</navigator>
-            <view class="app_info_item">About us</view>
+            <navigator url="/pages/feedback/index" class="app_info_item" hover-class="hover-box">意见反馈</navigator>
+            <view class="app_info_item" hover-class="hover-box">关于我们</view>
         </view>
 
-        <view class="share_wrap">Share with Others</view>
+        <view class="share_wrap" hover-class="hover-box">分享</view>
 
 
     </view>

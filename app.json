@@ -10,7 +10,6 @@
     "pages/search/index",  
     "pages/user/index",
     "pages/feedback/index",
-    "pages/login/index",
     "pages/auth/index",
     "pages/pay/index"
 
@@ -29,25 +28,25 @@
     "borderStyle":"black",
     "list": [{
       "pagePath": "pages/index/index",
-      "text": "Home",
+      "text": "首页",
       "iconPath": "icons/home.png",
       "selectedIconPath": "icons/home-o.png"
     },
     {
         "pagePath": "pages/category/index",
-        "text": "Category",
+        "text": "分类",
         "iconPath": "icons/category.png",
         "selectedIconPath": "icons/category-o.png"
     },
     {
         "pagePath": "pages/cart/index",
-        "text": "Cart",
+        "text": "购物车",
         "iconPath": "icons/cart.png",
         "selectedIconPath": "icons/cart-o.png"
     },
     {
         "pagePath": "pages/user/index",
-        "text": "User",
+        "text": "我的",
         "iconPath": "icons/my.png",
         "selectedIconPath": "icons/my-o.png"
     }

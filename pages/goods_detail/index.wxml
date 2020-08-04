@@ -16,12 +16,12 @@
 		<view class="goods_name">{{goods_obj.goods_name}}</view>
 		<view class="goods_collect" bindtap="handleCollect">
 			<text class="iconfont {{stared ? 'icon-star' : 'icon-shoucang'}}"></text>
-			<view class="collect_text">Star</view>
+			<view class="collect_text">收藏</view>
 		</view>
 	</view>
 
 	<view class="goods_info">
-		<view class="goods_info_title">Detail</view>
+		<view class="goods_info_title">详情</view>
 		<view class="goods_info_content">
 			<rich-text nodes="{{goods_obj.goods_introduce}}"></rich-text>
 		</view>
@@ -30,21 +30,21 @@
 	<view class="bottom_tool">
 		<view class="tool_item">
 			<view class="iconfont icon-kefu1"></view>
-			<view >Contact</view>
+			<view >客服</view>
 			<button open-type="contact"></button>
 		</view>
 		<view class="tool_item">
 			<view class="iconfont icon-share"></view>
-			<view >Share</view>
+			<view >分享</view>
 			<button open-type="share"></button>
 		</view>
 		<navigator open-type="switchTab" url="/pages/cart/index" class="tool_item">
 			<view class="iconfont icon-gouwuche"></view>
-			<view >Cart</view>						
+			<view >购物车</view>						
 		</navigator>
 
-		<view class="add_to_cart" bindtap="handle_mycart">Add to Cart</view>
+		<view class="add_to_cart" bindtap="handle_mycart">添加至购物车</view>
 
-		<view class="buy" bindtap="handle_transaction">Buy Now</view>
+		<view class="buy" bindtap="handle_transaction">立即购买</view>
 	</view>
 </view>

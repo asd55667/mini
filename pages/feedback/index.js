@@ -11,12 +11,12 @@ Page({
     tab_data:[
       {
         id:0,
-        value: "Problem",
+        value: "问题报告",
         isActive: true
       },
       {
         id:1,
-        value: "Complain",
+        value: "投诉",
         isActive: false
       }
     ],

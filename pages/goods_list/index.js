@@ -9,22 +9,24 @@ Page({
     tab_data:[
       {
         id: 0,
-        value: "Featured",
+        value: "综合",
         isActive: true
       },
       {
         id: 1,
-        value: "BestSelling",
+        value: "销量",
         isActive:false
       },
       {
         id:2,
-        value: "Price",
+        value: "价格",
         isActive:false
       }
     ],
 
-    goods_list: []
+    goods_list: [],
+    sort_by_price: [],
+    sort_by_nums: []
   },
   query_param:{
     query:"",
@@ -41,7 +43,6 @@ Page({
     this.query_param.cid = options.cid || "";
     this.query_param.query = options.query || "";
     this.getGoodsList();
-
   },
 
   async getGoodsList(){
@@ -50,8 +51,16 @@ Page({
     let {goods} = res.data.message;
     const {total} =  res.data.message;
     this.total_pages = Math.ceil(total / this.query_param.pagesize);
+
+    // this.data.goods_list.sort((x,y) => x['goods_price'] - y['goods_price']);
+    let goods_list = [...this.data.goods_list, ...goods];
+    let sort_by_price = goods_list.slice().sort((x,y) => x['goods_price'] - y['goods_price']);
+    let sort_by_nums = goods_list.slice().sort((x,y) => x['goods_number'] - y['goods_number']);
     this.setData({
-      goods_list: [...this.data.goods_list, ...goods]
+      goods_list,
+      sort_by_price,
+      sort_by_nums
+      // : [...this.data.goods_list, ...goods]
     })
 
     wx.stopPullDownRefresh();
@@ -78,7 +87,7 @@ Page({
     }
     else{
       this.query_param.page_no++;
-      console.log(this.query_param.page_no);
+      // console.log(this.query_param.page_no);
       this.getGoodsList();
     }
   },

@@ -1,8 +1,7 @@
 {
   "usingComponents": {
-    "search_input": "../../components/search_input/search_input"
+    "search_input": "/components/search_input/search_input"
   },
-
-  "navigationBarTitileText": "myHome"
+  "navigationBarTitileText": "首页"
 
 }
