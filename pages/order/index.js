@@ -39,10 +39,14 @@ Page({
     orders:[]
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
+  onLoad: function(options){
+    let {id} = options;
+    this.changeTitleByIndex(id-1);
+    
+  },
+
+
+  onShow: function (options) {
     // const token = wx.getStorageSync('token');
     // if(!token){
     //   wx.navigateTo({
@@ -54,10 +58,9 @@ Page({
 
     // let curPages =  getCurrentPages();
     // let cur_page = curPages[curPages.length - 1];
-    // // console.log(cur_page.options);
-
-    // const {type} = cur_page.options;
-    // this.changeTitleByIndex(type-1);
+    // const {id} = cur_page.options;
+    // this.changeTitleByIndex(id-1);
+    
     // this.getOrders(type);
   },
 

@@ -6,7 +6,7 @@
 		<!-- 综合 -->
 		<block wx:if="{{tab_data[0].isActive}}">
 			<view class="featured">
-				<navigator class="goods_item" wx:for="{{goods_list}}" wx:key="goods_id" url="/pages/goods_detail/index?goods_id={{item.goods_id}}">
+				<navigator class="goods_item" wx:for="{{goods_list}}" wx:key="index" url="/pages/goods_detail/index?goods_id={{item.goods_id}}">
 					<view class="goods_img_wrap">
 						<image mode="widthFix" src="{{item.goods_small_logo ? item.goods_small_logo : 'http://image5.suning.cn/uimg/b2c/newcatentries/0000000000-000000000160455569_1_400x400.jpg' }}" />
 					</view>
@@ -20,7 +20,7 @@
 		<!-- 销量 -->
 		<block wx:elif="{{tab_data[1].isActive}}">
 			<view class="number">
-				<navigator class="goods_item" wx:for="{{sort_by_nums}}" wx:key="goods_id" url="/pages/goods_detail/index?goods_id={{item.goods_id}}">
+				<navigator class="goods_item" wx:for="{{sort_by_nums}}" wx:key="index" url="/pages/goods_detail/index?goods_id={{item.goods_id}}">
 					<view class="goods_img_wrap">
 						<image mode="widthFix" src="{{item.goods_small_logo ? item.goods_small_logo : 'http://image5.suning.cn/uimg/b2c/newcatentries/0000000000-000000000160455569_1_400x400.jpg' }}" />
 					</view>
@@ -34,7 +34,7 @@
 		<!-- 价格 -->
 		<block wx:elif="{{tab_data[2].isActive}}">
 			<view class="price">
-				<navigator class="goods_item" wx:for="{{sort_by_price}}" wx:key="goods_id" url="/pages/goods_detail/index?goods_id={{item.goods_id}}">
+				<navigator class="goods_item" wx:for="{{sort_by_price}}" wx:key="index" url="/pages/goods_detail/index?goods_id={{item.goods_id}}">
 					<view class="goods_img_wrap">
 						<image mode="widthFix" src="{{item.goods_small_logo ? item.goods_small_logo : 'http://image5.suning.cn/uimg/b2c/newcatentries/0000000000-000000000160455569_1_400x400.jpg' }}" />
 					</view>

@@ -5,7 +5,7 @@
 <!-- ^swiper "/pages/goods_detail/main?goods_id=129" -->
   <view class="swiper_index">
     <swiper autoplay="{{true}}" indicator-dots circular>
-      <swiper-item wx:for="{{swiper_list}}" wx:key="goods_id">
+      <swiper-item wx:for="{{swiper_list}}" wx:key="index">
         <!-- <navigator url="{{item.navigator_url}}"> -->
         <navigator url="/pages/goods_detail/index?goods_id=129">
           <image mode="widthFix" src="{{item.image_src}}"></image>
@@ -16,7 +16,7 @@
 
 <!-- ^navigator -->
   <view class="cat_index">
-    <navigator wx:for="{{cat_list}}" wx:key="name" url="/pages/category/index" open-type="switchTab">
+    <navigator wx:for="{{cat_list}}" wx:key="index" url="/pages/category/index" open-type="switchTab">
       <image mode="widthFix" src="{{item.image_src}}"></image>
     </navigator>
   </view>
@@ -25,12 +25,12 @@
 <!-- ^floor -->
   <view class="floor_index">
     <view class="floor_group" wx:for="{{floor_list}}" 
-    wx:for-item="item1" wx:for-index="index1" wx:key="floor_title">
+    wx:for-item="item1" wx:for-index="index1" wx:key="index">
       <view class="floor_title">
         <image mode="widthFix" src="{{item1.floor_title.image_src}}"></image>
       <view class="floor_list">
         <navigator wx:for="{{item1.product_list}}" 
-        wx:for-item="item2" wx:for-index="index2" wx:key="name" url="{{item2.navigator_url}}">
+        wx:for-item="item2" wx:for-index="index2" wx:key="index" url="{{item2.navigator_url}}">
           <image mode='{{index2 === 0 ? "widthFix" : "scaleToFill"}}' src="{{item2.image_src}}"/>
           <!-- <image mode='widthFix' src="{{item2.image_src}}"/> -->
         </navigator>

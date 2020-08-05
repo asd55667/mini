@@ -8,7 +8,7 @@
 
 <view class="search_content">
     <navigator url="/pages/goods_detail/index?goods_id={{item.goods_id}}" class="search_item" 
-    wx:for="{{goods}}" wx:key="goods_id">
+    wx:for="{{goods}}" wx:key="index">
         {{item.goods_name}}
     </navigator>
 </view>

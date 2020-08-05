@@ -32,7 +32,7 @@
 		"cover": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.11.2",
+	"libVersion": "2.11.3",
 	"appid": "wxa32c3cbdd6ad143d",
 	"projectname": "online_retailers",
 	"debugOptions": {
@@ -97,13 +97,6 @@
 					"id": 4,
 					"name": "pay",
 					"pathName": "pages/pay/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "auth",
-					"pathName": "pages/auth/index",
 					"query": "",
 					"scene": null
 				},

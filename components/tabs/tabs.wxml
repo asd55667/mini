@@ -3,7 +3,7 @@
 
 <view class="tabs">
     <view class="tabs_title">
-        <view wx:for="{{tab_data}}" wx:key="id" class="title_item {{item.isActive? 'active' : ''}}" 
+        <view wx:for="{{tab_data}}" wx:key="index" class="title_item {{item.isActive? 'active' : ''}}" 
         bindtap="handle_item_tap" data-index="{{index}}">
               {{item.value}}
         </view>

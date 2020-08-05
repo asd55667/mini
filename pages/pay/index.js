@@ -1,5 +1,5 @@
 // pages/pay/index.js
-import {show_toast, request_payment} from "../../utils/asyn_wx.js"
+import {get_setting, open_setting, choose_address, show_model, show_toast, request_payment} from "../../utils/asyn_wx.js"
 import { request} from "../../request/index.js";
 
 Page({
@@ -11,7 +11,10 @@ Page({
     address:{}, 
     cart: [],
     total_price: 0,
-    nums: 0
+    nums: 0,
+
+    textVal: ""
+
   },
 
   /**
@@ -98,8 +101,27 @@ Page({
       await show_toast({title: "支付失败"});
       console.log(err);
     }
+  },
 
-
-  }
+  async handleAddr(e){
+    try{
+      const res = await get_setting();
+      const scope_addr = res.authSetting['scope.address'];
+      if(scope_addr === false){
+        await open_setting();
+      }
+      const res1 = await choose_address();
+      wx.setStorageSync("addr", res1);
+    }
+    catch(error){
+      console.log(error);
+    }
+  },
+  
+  handleTextInp(e){
+    this.setData({
+      textVal: e.detail.value
+    })
+  },
 
 })  

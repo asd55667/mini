@@ -4,7 +4,7 @@
 <view class="goods_detail">
 	<!-- swiper -->
 	<swiper autoplay="{{true}}" circular indicator-dots>
-		<swiper-item wx:for="{{goods_obj.pics}}" wx:key="pics_id" 
+		<swiper-item wx:for="{{goods_obj.pics}}" wx:key="index" 
 		bindtap="handle_img" data-url="{{item.pics_mid_url}}">
 			<image mode="widthFix" src="{{item.pics_mid_url}}" />
 		</swiper-item>
