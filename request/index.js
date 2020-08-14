@@ -1,3 +1,5 @@
+import {login} from "../utils/asyn_wx.js";
+
 let ajax_time = 0;
 export const request=(params)=>{
   let header = {...params.header};
@@ -54,8 +56,9 @@ export const request2=(params)=>{
     fail: ()=>{},
     complete: ()=>{}
   });
-  const baseUrl = "47.102.109.49:8000";
-// const baseUrl = "mini.wuchengwei.icu";
+  
+  const baseUrl = "https://mini.wuchengwei.icu/wordcat/";
+  
   return new Promise((resolve, reject)=>{
   wx.request({
     ...params,
@@ -76,4 +79,27 @@ export const request2=(params)=>{
 
   });
 })
+}
+
+export const checkSession = ()=>{
+  return new Promise((resolve, reject)=>{
+    wx.checkSession({
+      success: (res) => {resolve(res)},
+      fail: (err) => {
+        reject(err);
+    }
+    })
+  })
+}
+
+export const userLogin = async ()=>{
+  let {errMsg} = await checkSession();
+  if(errMsg === "checkSession:ok"){    
+    const {code} = await login();
+    // const {encryptedData, rawData, iv, signature} = e.detail;
+    // const loginParams = {encryptedData, rawData, iv, signature, code};
+    const res = await request2({url: "users/wxlogin", data: {code}, method:"POST"});
+    let {data} = res;
+    wx.setStorageSync('token', data);
+  }
 }

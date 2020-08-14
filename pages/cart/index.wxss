@@ -116,7 +116,7 @@ page {
   font-weight: 600;
 }
 .foot_tool .pay_wrap {
-  flex: 3;
+  flex: 2;
   background-color: var(--themeColor);
   color: #fff;
   font-size: 32rpx;
@@ -124,4 +124,5 @@ page {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 0;
 }

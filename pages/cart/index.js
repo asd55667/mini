@@ -1,5 +1,7 @@
 // pages/cart/index.js
-import {get_setting, open_setting, choose_address, show_model, show_toast} from "../../utils/asyn_wx.js"
+import {login, get_setting, open_setting, choose_address, show_model, show_toast} from "../../utils/asyn_wx.js"
+import {request, request2} from "../../request/index.js"
+
 
 Page({
 
@@ -183,6 +185,28 @@ Page({
       fail: ()=>{},
       complete: ()=>{}
     });
-  }
+  },
+
+  async handleUserInfo(e){
+    try{
+      // console.log(e);
+      const {encryptedData, rawData, iv, signature} = e.detail;
+      // console.log(encryptedData); 
+      const {code} = await login();
+      // x.log(code); 
+      const loginParams = {encryptedData, rawData, iv, signature, code};
+      console.log(loginParams);
+      const token = await request2({url: "/wxlogin",data:loginParams, method:"POST"});
+      
+      //TODO:
+      console.log(token);
+      wx.setStorageSync("token", token);
+      
+      handle_pay();
+    }
+    catch(err){
+      console.log(err);
+    }
+  },
 
 })

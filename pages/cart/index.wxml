@@ -75,5 +75,6 @@
         <view >含运费</view>
     </view>
 <!-- pay button -->
-    <view class="pay_wrap" bindtap="handle_pay">付款({{nums}})</view>
+    <!-- <view class="pay_wrap" bindtap="handle_pay">付款({{nums}})</view> -->
+    <button class="pay_wrap" open-type="getUserInfo"  bindgetuserinfo="handleUserInfo">付款({{nums}})</button>
 </view>
